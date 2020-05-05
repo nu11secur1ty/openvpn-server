@@ -1,5 +1,7 @@
 Simple OpenVPN Server
+
 ![](https://github.com/nu11secur1ty/openvpn-server/blob/master/logo/OpenVpn_Logo.png)
+
 ====
 
 OpenVPN is a one of the most popular VPN platforms for a lot of good reasons. It's free, open source, and there are clients for just about every platform imaginable. For these reasons, OpenVPN is the choice for organizations and individuals alike. 
