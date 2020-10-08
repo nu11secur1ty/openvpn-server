@@ -52,6 +52,9 @@ Otherwise, use the installer:
 
 	````
 	./openvpn.sh --adminpassword=mypassword --host=myvpn.example.com
+		or
+	./openvpn.sh --adminpassword=mypassword --host=0.0.0.0
+
 	````
 
 
