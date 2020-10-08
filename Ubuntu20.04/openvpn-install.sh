@@ -528,6 +528,7 @@ else
 						firewall-cmd --permanent --zone=trusted --remove-source=fddd:1194:1194:1194::/64
 						firewall-cmd --direct --remove-rule ipv6 nat POSTROUTING 0 -s fddd:1194:1194:1194::/64 ! -d fddd:1194:1194:1194::/64 -j SNAT --to "$ip6"
 						firewall-cmd --permanent --direct --remove-rule ipv6 nat POSTROUTING 0 -s fddd:1194:1194:1194::/64 ! -d fddd:1194:1194:1194::/64 -j SNAT --to "$ip6"
+					        apt-get autoremove -y
 					fi
 				else
 					systemctl disable --now openvpn-iptables.service
