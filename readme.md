@@ -32,6 +32,8 @@ Otherwise, use the installer:
 
 	````
 	wget https://raw.githubusercontent.com/theonemule/simple-openvpn-server/master/openvpn.sh
+		or
+	wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/openvpn.sh
 	````
 
 1. Make the script executable
