@@ -24,7 +24,7 @@ Run the script and follow the assistant:
 
   or
 
-`wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/Ubuntu20.04/openvpn-install.sh`
+`wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/Debian/openvpn-install.sh`
 
 Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
 
