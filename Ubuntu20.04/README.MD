@@ -35,6 +35,19 @@ Run the script and follow the assistant:
 
 `wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/Ubuntu20.04/openvpn-install.sh`
 
+- - - Authentication and deployment
+      username > password for `ovpn` config file
+
+```bash
+  cd Debian/
+  bash openvpn-install.sh 
+  bash openvpn-auth-script/append_auth_user_pass_rule.sh admin password
+  vim /root/admin.ovpn # check if everything is ok
+  cp /root/admin.ovpn /var/www/html/ # transver your admin.ovpn config
+ ```
+------------------------------------------------------------------------------------------------------------
+
+
 Once it ends, you can run it again to add more users, remove some of them or even completely uninstall OpenVPN.
 
 ### I want to run my own VPN but don't have a server for that
