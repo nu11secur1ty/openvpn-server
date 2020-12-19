@@ -544,7 +544,8 @@ else
 				if [[ "$os" = "debian" || "$os" = "ubuntu" ]]; then
 					apt-get remove --purge -y openvpn
 					# Cleaning for Debian and Ubuntu
-					rm -rf /etc/openvpn/
+					echo "WARNING: Everything will be cleaned!"
+					sleep 3
 				else
 					# Else, OS must be CentOS or Fedora
 					yum remove -y openvpn
