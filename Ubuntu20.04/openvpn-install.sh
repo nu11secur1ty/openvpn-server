@@ -3,7 +3,7 @@
 # https://github.com/Nyr/openvpn-install
 #
 # Copyright (c) 2013 Nyr. Released under the MIT License.
-# Modified @nu11secur1ty
+# Modified @nu11secur1ty 2020
 
 
 # Detect Debian users running the script with "sh" instead of bash
