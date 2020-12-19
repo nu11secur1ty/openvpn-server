@@ -543,6 +543,10 @@ else
 				rm -f /etc/sysctl.d/30-openvpn-forward.conf
 				if [[ "$os" = "debian" || "$os" = "ubuntu" ]]; then
 					apt-get remove --purge -y openvpn
+					# Cleaning for Debian and Ubuntu
+					echo "WARNING: Everything will be cleaned!"
+					sleep 3
+					rm -rf /etc/openvpn/
 				else
 					# Else, OS must be CentOS or Fedora
 					yum remove -y openvpn
