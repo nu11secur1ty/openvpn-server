@@ -32,14 +32,11 @@ or
 
 `wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`
 
-- - - Authentication and deployment
-      username > password for `ovpn` config file
+- - - Deployment
 
 ```bash
   cd Debian/
-  bash openvpn-install.sh # use for user: admin
-  bash openvpn-auth-script/append_auth_user_pass_rule.sh # use the same user from the first script: admin your_password
-  vim /root/admin.ovpn # check if everything is ok
+  bash openvpn-install.sh # example user: admin
   cp /root/admin.ovpn /var/www/html/ # transfer your admin.ovpn config
   systemctl status openvpn-server@server.service # checking the status
  ```
