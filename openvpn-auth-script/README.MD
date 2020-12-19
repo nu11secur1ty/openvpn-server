@@ -1,1 +1,1 @@
-# user password
+# user & password authentication for the config file
