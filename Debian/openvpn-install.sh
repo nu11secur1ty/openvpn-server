@@ -3,7 +3,7 @@
 # https://github.com/Nyr/openvpn-install
 #
 # Copyright (c) 2013 Nyr. Released under the MIT License.
-# Modified @nu11secur1ty
+# Modified @nu11secur1ty 2020
 
 
 # Detect Debian users running the script with "sh" instead of bash
@@ -505,7 +505,7 @@ else
 		;;
 		3)
 			echo
-			echo -e "\e[31mBoldEverything will be cleaned, please make a backup if you need\e[0m"
+			echo -e "\e[31mEverything will be cleaned, please make a backup if you need"
 			read -p "Press enter to continue..."
 			echo
 			read -p "Confirm OpenVPN removal? [y/N]: " remove
