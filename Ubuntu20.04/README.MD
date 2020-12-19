@@ -39,11 +39,12 @@ Run the script and follow the assistant:
       username > password for `ovpn` config file
 
 ```bash
-  cd Ubuntu20.04/
+  cd Debian/
   bash openvpn-install.sh # use for user: admin
   bash openvpn-auth-script/append_auth_user_pass_rule.sh # use the same user from the first script: admin your_password
   vim /root/admin.ovpn # check if everything is ok
   cp /root/admin.ovpn /var/www/html/ # transfer your admin.ovpn config
+  systemctl status openvpn # checking the status
  ```
 ------------------------------------------------------------------------------------------------------------
 
