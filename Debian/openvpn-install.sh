@@ -505,8 +505,9 @@ else
 		;;
 		3)
 			echo
-			echo "Everything will be cleaned, please make a backup if you need"
+			echo -e "\e[31mBoldEverything will be cleaned, please make a backup if you need\e[0m"
 			read -p "Press enter to continue..."
+			echo
 			read -p "Confirm OpenVPN removal? [y/N]: " remove
 			until [[ "$remove" =~ ^[yYnN]*$ ]]; do
 				echo "$remove: invalid selection."
