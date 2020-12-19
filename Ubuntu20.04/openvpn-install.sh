@@ -505,7 +505,7 @@ else
 		;;
 		3)
 			echo
-			echo -e "\e[31mEverything will be cleaned, please make a backup if you need"
+			echo -e "\e[31mEverything will be cleaned, please make a backup if you need!\e[0m""
 			read -p "Press enter to continue..."
 			echo
 			read -p "Confirm OpenVPN removal? [y/N]: " remove
