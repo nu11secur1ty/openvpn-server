@@ -501,6 +501,7 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo "$client revoked!"
+				echo -e "\e[31mWARNING: you can not use the config that you already revoke!\e[0m"
 				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 			else
 				echo
