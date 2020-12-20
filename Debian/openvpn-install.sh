@@ -96,7 +96,7 @@ new_client () {
 	echo "<tls-crypt>"
 	sed -ne '/BEGIN OpenVPN Static key/,$ p' /etc/openvpn/server/tc.key
 	echo "</tls-crypt>"
-	} > /etc/openvpn/client/"$client".ovpn
+	} > ~/"$client".ovpn
 }
 
 if [[ ! -e /etc/openvpn/server/server.conf ]]; then
@@ -428,8 +428,7 @@ verb 3" > /etc/openvpn/server/client-common.txt
 	echo
 	echo "Finished!"
 	echo
-	# echo "The client configuration is available in:" ~/"$client.ovpn"
-	echo "The client configuration is available in:" /etc/openvpn/client/"$client.ovpn"
+	echo "The client configuration is available in:" ~/"$client.ovpn"
 	echo "New clients can be added by running this script again."
 else
 	clear
@@ -461,8 +460,7 @@ else
 			# Generates the custom client.ovpn
 			new_client
 			echo
-			# echo "$client added. Configuration available in:" ~/"$client.ovpn"
-			echo "$client added. Configuration available in:" /etc/openvpn/client/"$client.ovpn"
+			echo "$client added. Configuration available in:" ~/"$client.ovpn"
 			exit
 		;;
 		2)
@@ -551,6 +549,7 @@ else
 					# Cleaning for Debian and Ubuntu
 					echo "WARNING: Everything will be cleaned!"
 					sleep 3
+					rm -rf /etc/openvpn/
 				else
 					# Else, OS must be CentOS or Fedora
 					yum remove -y openvpn
