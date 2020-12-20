@@ -474,6 +474,7 @@ else
 			fi
 			echo
 			echo "Select the client to revoke:"
+			echo -e "\e[31mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
 			read -p "Client: " client_number
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
