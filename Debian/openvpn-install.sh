@@ -194,6 +194,7 @@ if [[ ! -e /etc/openvpn/server/server.conf ]]; then
 	# Allow a limited set of characters to avoid conflicts
 	client=$(sed 's/[^0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-]/_/g' <<< "$unsanitized_client")
 	[[ -z "$client" ]] && client="client"
+	mv /root/*.ovpn* /etc/openvpn/client/
 	echo
 	echo "OpenVPN installation is ready to begin."
 	# Install a firewall in the rare case where one is not already available
