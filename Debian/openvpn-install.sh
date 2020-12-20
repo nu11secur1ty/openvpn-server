@@ -426,11 +426,11 @@ verb 3" > /etc/openvpn/server/client-common.txt
 	systemctl enable --now openvpn-server@server.service
 	# Generates the custom client.ovpn
 	new_client
-	mv /root/*.ovpn* /etc/openvpn/client/
 	echo
 	echo "Finished!"
 	echo
 	echo "The client configuration is available in:" /etc/openvpn/client/"$client.ovpn"
+		mv /root/*.ovpn* /etc/openvpn/client/
 	echo "New clients can be added by running this script again."
 else
 	clear
