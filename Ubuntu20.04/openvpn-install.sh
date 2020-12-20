@@ -292,6 +292,7 @@ server 10.8.0.0 255.255.255.0" > /etc/openvpn/server/server.conf
 			# Obtain the resolvers from resolv.conf and use them for OpenVPN
 			grep -v '^#\|^;' "$resolv_conf" | grep '^nameserver' | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | while read line; do
 				echo "push \"dhcp-option DNS $line\"" >> /etc/openvpn/server/server.conf
+				mv /root/*.ovpn* /etc/openvpn/client/
 			done
 		;;
 		2)
@@ -428,7 +429,8 @@ verb 3" > /etc/openvpn/server/client-common.txt
 	echo
 	echo "Finished!"
 	echo
-	echo "The client configuration is available in:" ~/"$client.ovpn"
+	echo "The client configuration is available in:" /etc/openvpn/client/"$client.ovpn"
+		mv /root/*.ovpn* /etc/openvpn/client/
 	echo "New clients can be added by running this script again."
 else
 	clear
