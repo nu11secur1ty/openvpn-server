@@ -505,6 +505,7 @@ else
 				echo "$client revoked!"
 				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
 				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
+				systemctl restart openvpn-server@server.service
 			else
 				echo
 				echo "$client revocation aborted!"
