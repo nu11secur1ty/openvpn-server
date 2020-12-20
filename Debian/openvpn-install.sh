@@ -448,6 +448,7 @@ else
 		1)
 			echo
 			echo "Provide a name for the client:"
+			echo -e "\e[32mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			read -p "Name: " unsanitized_client
 			client=$(sed 's/[^0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-]/_/g' <<< "$unsanitized_client")
 			while [[ -z "$client" || -e /etc/openvpn/server/easy-rsa/pki/issued/"$client".crt ]]; do
