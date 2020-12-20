@@ -37,7 +37,7 @@ or
 ```bash
   cd Debian/
   bash openvpn-install.sh # example user: admin
-  cp /root/admin.ovpn /var/www/html/ # transfer your admin.ovpn config
+  cp /etc/openvpn/client/admin.ovpn /var/www/html/ # transfer your admin.ovpn config
   systemctl status openvpn-server@server.service # checking the status
  ```
 ------------------------------------------------------------------------------------------------------------
