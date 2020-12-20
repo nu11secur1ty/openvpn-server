@@ -448,6 +448,7 @@ else
 		1)
 			echo
 			echo "Provide a name for the client:"
+			echo -e "\e[32mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			read -p "Name: " unsanitized_client
 			client=$(sed 's/[^0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-]/_/g' <<< "$unsanitized_client")
 			while [[ -z "$client" || -e /etc/openvpn/server/easy-rsa/pki/issued/"$client".crt ]]; do
@@ -474,6 +475,7 @@ else
 			fi
 			echo
 			echo "Select the client to revoke:"
+			echo -e "\e[31mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
 			read -p "Client: " client_number
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
@@ -506,6 +508,7 @@ else
 		3)
 			echo
 			echo -e "\e[31mEverything will be cleaned, please make a backup if you need!\e[0m"
+			echo -e "\e[31mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			read -p "Press enter to continue..."
 			echo
 			read -p "Confirm OpenVPN removal? [y/N]: " remove
