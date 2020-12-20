@@ -556,6 +556,7 @@ else
 					# Cleaning for Debian and Ubuntu
 					echo "WARNING: Everything will be cleaned!"
 					sleep 3
+					apt autoremove -y
 					rm -rf /etc/openvpn/
 				else
 					# Else, OS must be CentOS or Fedora
