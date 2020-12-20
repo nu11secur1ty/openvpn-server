@@ -462,7 +462,8 @@ else
 			# Generates the custom client.ovpn
 			new_client
 			echo
-			echo "$client added. Configuration available in:" ~/"$client.ovpn"
+			echo "$client added. Configuration available in:" /etc/openvpn/client/"$client.ovpn"
+			mv /root/*.ovpn* /etc/openvpn/client/
 			exit
 		;;
 		2)
@@ -500,6 +501,8 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo "$client revoked!"
+				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
+				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 			else
 				echo
 				echo "$client revocation aborted!"
