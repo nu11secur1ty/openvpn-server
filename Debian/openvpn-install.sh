@@ -462,7 +462,8 @@ else
 			# Generates the custom client.ovpn
 			new_client
 			echo
-			echo "$client added. Configuration available in:" ~/"$client.ovpn"
+			echo "$client added. Configuration available in:" /etc/openvpn/client/"$client.ovpn"
+			mv /root/*.ovpn* /etc/openvpn/client/
 			exit
 		;;
 		2)
