@@ -501,6 +501,7 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo "$client revoked!"
+				echo -e "\e[31mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 			else
 				echo
 				echo "$client revocation aborted!"
