@@ -29,11 +29,12 @@ This script will let you set up your own VPN server in no more than a minute, ev
 ### Installation
 Run the script and follow the assistant:
 
+`wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/Ubuntu20.04/openvpn-install.sh`
+
+or
+
 `wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh`
 
-  or
-
-`wget https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/Ubuntu20.04/openvpn-install.sh`
 
 - - - Deployment
 
