@@ -504,7 +504,7 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo -e "\e[32mGive the correct username if you want to remove it from /client/ directory!\e[0m"
-				echo -e "\e[32mor if you want to clean manually the configuration file in /etc/openvpn/client/ directory,\njust press Enter!\e[0m"
+				echo -e "\e[32mor if you want to clean manually just press Enter!\e[0m"
 				read -p "Username: " user_name
 				rm -rf /etc/openvpn/client/$user_name.ovpn
 				echo "$client revoked!"
