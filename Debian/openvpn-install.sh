@@ -486,12 +486,8 @@ else
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
 				echo "$client_number: invalid selection."
 				read -p "Client: " client_number
-			
-			read -p "Username: " user_name
-			until [[ "$user_name" =~ ^[a-q]+$ && "$user_name" -le "$number_of_clients" ]]; do
-				echo "$client_number: invalid selection."
-				read -p "Username: " user_name
-			        rm -rf /etc/openvpn/client/$user_name
+			        read -p "Username: " user_name
+                                rm -rf /etc/openvpn/client/$user_name
     			done
 			client=$(tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$client_number"p)
 			echo
