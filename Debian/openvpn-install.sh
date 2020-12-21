@@ -492,7 +492,6 @@ else
 			until [[ "$revoke" =~ ^[yYnN]*$ ]]; do
 				echo "$revoke: invalid selection."
 				read -p "Confirm $client revocation? [y/N]: " revoke
-				rm -rf /etc/openvpn/client/$client_number
 			done
 			if [[ "$revoke" =~ ^[yY]$ ]]; then
 				cd /etc/openvpn/server/easy-rsa/
@@ -504,6 +503,7 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo "$client revoked!"
+				rm -rf /etc/openvpn/client/$client
 				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
 				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 				systemctl restart openvpn-server@server.service
