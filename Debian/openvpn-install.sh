@@ -481,13 +481,18 @@ else
 			echo "Select the client to revoke:"
 			echo -e "\e[31mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
+			
 			read -p "Client: " client_number
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
 				echo "$client_number: invalid selection."
 				read -p "Client: " client_number
+			
+			read -p "Username: " user_name
+			until [[ "$user_name" =~ ^[a-q]+$ && "$user_name" -le "$number_of_clients" ]]; do
+				echo "$client_number: invalid selection."
 				read -p "Username: " user_name
-				rm -rf /etc/openvpn/client/$user_name
-			done
+			        rm -rf /etc/openvpn/client/$user_name
+    			done
 			client=$(tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$client_number"p)
 			echo
 			read -p "Confirm $client revocation? [y/N]: " revoke
