@@ -3,7 +3,13 @@
 # https://github.com/Nyr/openvpn-install
 #
 # Copyright (c) 2013 Nyr. Released under the MIT License.
-# Modified @nu11secur1ty 2020
+#
+# https://github.com/nu11secur1ty/openvpn-server
+#
+# Copyright (c) @nu11secur1ty 2020. Released under the MIT License.
+#
+# Development and more features by @nu11secur1ty 2020
+
 
 
 # Detect Debian users running the script with "sh" instead of bash
@@ -503,7 +509,7 @@ else
 				# CRL is read with each client connection, when OpenVPN is dropped to nobody
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
-				echo -e "\e[32mGive the correct username if you want to remove it from /client/ directory!\e[0m"
+				echo -e "\e[32mGive the correct username if you want to remove it from /etc/openvpn/client/ directory!\e[0m"
 				echo -e "\e[32mor if you want to clean manually just press Enter!\e[0m"
 				read -p "Username: " user_name
 				rm -rf /etc/openvpn/client/$user_name.ovpn
