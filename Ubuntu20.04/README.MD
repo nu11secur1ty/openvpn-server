@@ -39,7 +39,7 @@ or
 - - - Deployment
 
 ```bash
-  cd Debian/
+  cd Ubuntu20.04/
   bash openvpn-install.sh # example user: admin
   cp /etc/openvpn/client/admin.ovpn /var/www/html/ # transfer your admin.ovpn config
   systemctl status openvpn-server@server.service # checking the status
