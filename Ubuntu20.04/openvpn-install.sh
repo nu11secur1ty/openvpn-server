@@ -481,11 +481,12 @@ else
 			echo "Select the client to revoke:"
 			echo -e "\e[31mIf you are not sure about this, please press Ctrl + c for exit\e[0m"
 			tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
+			
 			read -p "Client: " client_number
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
 				echo "$client_number: invalid selection."
 				read -p "Client: " client_number
-			done
+    			done
 			client=$(tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$client_number"p)
 			echo
 			read -p "Confirm $client revocation? [y/N]: " revoke
@@ -502,9 +503,13 @@ else
 				# CRL is read with each client connection, when OpenVPN is dropped to nobody
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
+				echo -e "\e[32mGive the correct username if you want to remove it from /client/ directory!\e[0m"
+				echo -e "\e[32mor if you want to clean manually just press Enter!\e[0m"
+				read -p "Username: " user_name
+				rm -rf /etc/openvpn/client/$user_name.ovpn
 				echo "$client revoked!"
-				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
-				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
+				echo -e "\e[34mCheck /etc/openvpn/client/ for your available configurations!\e[0m"
+				echo -e "\e[34mand if you missing something which is should not be there, please remove it!\e[0m"
 				systemctl restart openvpn-server@server.service
 			else
 				echo
