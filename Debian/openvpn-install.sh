@@ -485,6 +485,8 @@ else
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
 				echo "$client_number: invalid selection."
 				read -p "Client: " client_number
+				read -p "Username: " user_name
+				rm -rf /etc/openvpn/client/$user_name
 			done
 			client=$(tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$client_number"p)
 			echo
@@ -503,7 +505,6 @@ else
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
 				echo "$client revoked!"
-				rm -rf /etc/openvpn/client/$client
 				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
 				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 				systemctl restart openvpn-server@server.service
