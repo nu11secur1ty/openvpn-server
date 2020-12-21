@@ -483,8 +483,6 @@ else
 			tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
 			
 			read -p "Client: " client_number
-			read -p "Username: " user_name
-                       
 			until [[ "$client_number" =~ ^[0-9]+$ && "$client_number" -le "$number_of_clients" ]]; do
 				echo "$client_number: invalid selection."
 				read -p "Client: " client_number
@@ -505,8 +503,11 @@ else
 				# CRL is read with each client connection, when OpenVPN is dropped to nobody
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
+				echo "Give the correct username if you want to remove it from /client/ directory!"
+				read -p "Username: " user_name
 				rm -rf /etc/openvpn/client/$user_name.ovpn
 				echo "$client revoked!"
+				echo "$user_name cleaned!"
 				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
 				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
 				systemctl restart openvpn-server@server.service
