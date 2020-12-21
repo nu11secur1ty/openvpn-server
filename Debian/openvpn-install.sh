@@ -492,6 +492,7 @@ else
 			until [[ "$revoke" =~ ^[yYnN]*$ ]]; do
 				echo "$revoke: invalid selection."
 				read -p "Confirm $client revocation? [y/N]: " revoke
+				rm -rf /etc/openvpn/client/$client_number
 			done
 			if [[ "$revoke" =~ ^[yY]$ ]]; then
 				cd /etc/openvpn/server/easy-rsa/
