@@ -503,13 +503,12 @@ else
 				# CRL is read with each client connection, when OpenVPN is dropped to nobody
 				chown nobody:"$group_name" /etc/openvpn/server/crl.pem
 				echo
-				echo "Give the correct username if you want to remove it from /client/ directory!"
+				echo -e "\e[32mGive the correct username if you want to remove it from /client/ directory!\e[0m"
 				read -p "Username: " user_name
 				rm -rf /etc/openvpn/client/$user_name.ovpn
 				echo "$client revoked!"
 				echo "$user_name cleaned!"
-				echo -e "\e[31mWARNING: You cannot use the config file which you already revoked!\e[0m"
-				echo -e "\e[34mCheck /etc/openvpn/client/ and if want you can delete the config manually!\e[0m"
+				echo -e "\e[34mCheck /etc/openvpn/client/ for your available configurations!\e[0m"
 				systemctl restart openvpn-server@server.service
 			else
 				echo
