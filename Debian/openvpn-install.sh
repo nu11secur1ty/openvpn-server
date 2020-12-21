@@ -505,6 +505,9 @@ else
 				echo
 				echo -e "\e[32mGive the correct username if you want to remove it from /client/ directory!\e[0m"
 				read -p "Username: " user_name
+					if [ "$user_name" -ne ^[a-q] ]; then
+						exit 0
+						fi
 				rm -rf /etc/openvpn/client/$user_name.ovpn
 				echo "$client revoked!"
 				echo "$user_name cleaned!"
