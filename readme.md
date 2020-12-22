@@ -14,7 +14,7 @@ The scripts assumes that there is NOT an instance of OpenVPN already installed o
 
 ## Installing OpenVPN
 
-- - - **WARNING:** ***Minimum Requirements = `Debian 9`, `CentOS 7`, `Ubuntu 18.04`*** 
+- - - **WARNING:** ***Minimum Requirements = `Debian 9`, `CentOS 7`, `Ubuntu 18.04`, `Ubuntu 20.04-10`*** 
 
 Optionally, you can do a completely automated deployment to Azure and skip past the installation to **Managing Clients**.
 
