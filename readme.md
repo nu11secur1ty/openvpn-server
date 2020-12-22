@@ -13,6 +13,7 @@ The scripts assumes that there is NOT an instance of OpenVPN already installed o
 
 
 ## Installing OpenVPN
+- - - NOTE: For Debian 8 
 
 Optionally, you can do a completely automated deployment to Azure and skip past the installation to **Managing Clients**.
 
