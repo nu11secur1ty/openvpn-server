@@ -119,9 +119,12 @@ The script supports these OS and architectures:
 | CentOS 7        | ✅   | ✅    | ✅    | ✅    |
 | CentOS 8        | ❌   | ✅    | ❌    | ✅    |
 | Debian >= 9     | ✅   | ✅    | ✅    | ✅    |
+| Debian >= 10     | ✅   | ✅    | ✅    | ✅    |
 | Fedora >= 27    | ❔   | ✅    | ❔    | ❔    |
 | Ubuntu 16.04    | ✅   | ✅    | ❌    | ❌    |
 | Ubuntu >= 18.04 | ✅   | ✅    | ✅    | ✅    |
+| Ubuntu >= 20.04     | ✅   | ✅    | ✅    | ✅    |
+| Ubuntu >= 20.10     | ✅   | ✅    | ✅    | ✅    |
 
 To be noted:
 
