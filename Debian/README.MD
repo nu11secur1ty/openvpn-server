@@ -1,5 +1,19 @@
 ![](https://github.com/nu11secur1ty/openvpn-server/blob/master/Debian/logo/Debian_logo.png)
 
+# WARNING: ***Minimal Requirements*** Debian 9
+```
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+```
+---------------------------------------------------------------------------
+
 ```bash
 PRETTY_NAME="Debian GNU/Linux 10 (buster)"
 NAME="Debian GNU/Linux"
