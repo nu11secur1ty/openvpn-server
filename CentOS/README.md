@@ -51,6 +51,8 @@ rm -rf thekey.crt
 rm -rf thekey.crt
 /etc/openvpn/easy-rsa/pki/revoked/reqs_by_serial
 rm -rf thekey.crt
+easy-rsa/pki/index.txt
+clean user
 ```
 
 ### Headless install
