@@ -47,6 +47,10 @@ If you have any question, head to the [FAQ](#faq) first. Please read everything 
 ```bash
 /etc/openvpn/easy-rsa/pki/revoked/certs_by_serial
 rm -rf thekey.crt
+/etc/openvpn/easy-rsa/pki/revoked/private_by_serial
+rm -rf thekey.crt
+/etc/openvpn/easy-rsa/pki/revoked/reqs_by_serial
+rm -rf thekey.crt
 ```
 
 ### Headless install
