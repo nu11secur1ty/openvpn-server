@@ -43,6 +43,12 @@ If you have any question, head to the [FAQ](#faq) first. Please read everything 
 
 **PLEASE do not send me emails or private messages asking for help.** The only place to get help is the issues. Other people may be able to help and in the future, other users may also run into the same issue as you. My time is not available for free just for you, you're not special.
 
+- - - Cleaning after remove a client
+```bash
+/etc/openvpn/easy-rsa/pki/revoked/certs_by_serial
+rm -rf thekey.crt
+```
+
 ### Headless install
 
 It's also possible to run the script headless, e.g. without waiting for user input, in an automated manner.
