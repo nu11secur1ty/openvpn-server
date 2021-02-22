@@ -7,10 +7,10 @@
 2. Run in Terminal app:
 
 ```ruby
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
-
-# nu11secur1ty
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/CentOS_Ubuntu20.04/stunnel/MacOS/stunnel)" < /dev/null 2> /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+cd /usr/local/Homebrew/Library/Tabs/homebrew
+git clone https://github.com/Homebrew/homebrew-core.git
+brew install stunnel
 ```
 - and press enter/return key.
 
