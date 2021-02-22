@@ -6,12 +6,15 @@
 
 2. Run in Terminal app:
 
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
-    and press enter/return key.
+```ruby
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+```
+- and press enter/return key.
 
 3. Run:
-    brew install stunnel
-
+```brew    
+brew install stunnel
+```
 And then it says, "Done! You can now use stunnel."
 
 Well, not exactly. Where do I put my stunnel.conf and certificate.pem? How do I
