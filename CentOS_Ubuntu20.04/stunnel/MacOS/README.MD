@@ -11,6 +11,7 @@
 cd /usr/local/Homebrew/Library/Tabs/homebrew
 rm -rf homebrew-core
 git clone https://github.com/Homebrew/homebrew-core.git
+cd 
 ```
 - and press enter/return key.
 
