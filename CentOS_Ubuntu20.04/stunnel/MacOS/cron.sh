@@ -3,3 +3,4 @@
 # systemctl restart stunnel4.service
 systemctl status stunnel4.service
 systemctl status openvpn@server.service
+  exit 0;
