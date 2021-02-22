@@ -8,8 +8,9 @@
 
 ```ruby
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+
 # nu11secur1ty
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/nu11secur1ty/openvpn-server/master/CentOS_Ubuntu20.04/stunnel/MacOS/stunnel)" < /dev/null 2> /dev/null
 ```
 - and press enter/return key.
 
