@@ -14,13 +14,19 @@ cd
 # Installing stunnel
 brew install stunnel
 
-# Configure stunnel on the server
-# EOF here
-#[openvpn-1]
-#cert = /usr/local/etc/stunnel/stunnel.pem
-#client = yes
-#accept = 1194
-#connect = x.x.x.x:443
+# configure
+cd /usr/local/etc/stunnel/
+
+# Server IP
+echo "Give your server IP"
+read IP_
+cat > stunnel.pem << EOF
+[openvpn-1]
+cert = /usr/local/etc/stunnel/stunnel.pem
+client = yes
+accept = 1194
+connect = $IP_:443
+EOF
 
 # Starting the stunnel on the server
 brew service start stunnel
