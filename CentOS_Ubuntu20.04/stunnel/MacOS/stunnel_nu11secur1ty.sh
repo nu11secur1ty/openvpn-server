@@ -15,10 +15,10 @@ cd
 brew install stunnel
 
 # configure
-cd /usr/local/etc/stunnel/
+# cd /usr/local/etc/stunnel/
 
 # Server IP
-echo "Give your server IP"
+# echo "Give your server IP"
 #read IP_
 #cat > stunnel.pem << EOF
 #[openvpn-1]
