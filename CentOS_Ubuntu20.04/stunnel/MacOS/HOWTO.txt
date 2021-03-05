@@ -10,10 +10,7 @@ just press Enter
 brew install stunnel
 touch /usr/local/etc/stunnel/stunnel.conf
 
-
-3. run configure script
-copy and paste all lines from stunne.conf.setup to /usr/local/etc/stunnel/stunnel.conf
-	
+3. Configuring stunnel.conf
 NOTE: Open the file and press i to edit the file.
 
 vim /usr/local/etc/stunnel/stunnel.conf
