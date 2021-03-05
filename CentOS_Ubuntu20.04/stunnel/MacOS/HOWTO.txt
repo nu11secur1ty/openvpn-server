@@ -8,7 +8,7 @@ just press Enter
 
 2. Install stunnel
 brew install stunnel
-cp /usr/local/etc/stunnel/stunnel.conf-sample /usr/local/etc/stunnel/stunnel.conf
+touch /usr/local/etc/stunnel/stunnel.conf
 
 
 3. run configure script
