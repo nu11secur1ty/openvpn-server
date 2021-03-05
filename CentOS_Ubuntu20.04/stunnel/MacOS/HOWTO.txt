@@ -24,7 +24,7 @@ vim /usr/local/etc/stunnel/stunnel.conf
 cert = /usr/local/etc/stunnel/stunnel.pem
 client = yes
 accept = 1194
-connect = 89.25.22.230:443
+connect = your_server_IP:443
 
 - Then press esc then :x to save and close the file
 
