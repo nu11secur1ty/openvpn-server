@@ -1,0 +1,45 @@
+# HOWTO:
+- - - All this command should be running in to your terminal!
+- - - NOTE: use your root password!
+
+1. run 
+bash maco.sh
+just press Enter
+
+2. Install stunnel
+brew install stunnel
+cp /usr/local/etc/stunnel/stunnel.conf-sample /usr/local/etc/stunnel/stunnel.conf
+
+
+3. run configure script
+copy and paste all lines from stunne.conf.setup to /usr/local/etc/stunnel/stunnel.conf
+	
+NOTE: Open the file and press i to edit the file.
+
+vim /usr/local/etc/stunnel/stunnel.conf
+
+- add this lines to:
+
+[openvpn]
+cert = /usr/local/etc/stunnel/stunnel.pem
+client = yes
+accept = 1194
+connect = 89.25.22.230:443
+
+- Then press esc then :x to save and close the file
+
+4. run 
+brew services start stunnel
+
+
+#########################
+
+Uninstall
+
+1.  brew uninstall stunnel
+
+2. run
+bash maco_uninstall.sh
+
+3. run
+rm -rf /usr/local/etc/stunnel
