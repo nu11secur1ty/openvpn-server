@@ -1,6 +1,7 @@
 #!/bin/sh
 apt update
 apt full-upgrade
+apt-get install libssl-dev -y
 apt install -y stunnel4
 cd /etc/stunnel/
 openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=127.0.0.1/O=localhost/C=BG' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
