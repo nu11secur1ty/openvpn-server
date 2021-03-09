@@ -3,10 +3,21 @@
 
 apt update
 apt full-upgrade
-apt install -y stunnel4
+
+# New version
+cd /opt/
+apt-get install libssl-dev -y
+wget https://www.stunnel.org/downloads/stunnel-5.58.tar.gz
+tar -xvf stunnel-5.58.tar.gz 
+cd stunnel-5.58
+./configure && make && make install
+
 cd /etc/stunnel/
 openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=127.0.0.1/O=localhost/C=BG' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
 touch stunnel.conf
+
+place=whereis stunnel
+echo "$place"
 
 # echo "client = no" # if you don't have an account yet
 echo "client = yes" |  tee -a /etc/stunnel/stunnel.conf
@@ -22,12 +33,4 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 # download stunnel.pem from home directory. It is needed by client.
  service stunnel4 restart
 
-# New version
-cd /opt/
-apt-get install libssl-dev -y
-wget https://www.stunnel.org/downloads/stunnel-5.58.tar.gz
-tar -xvf stunnel-5.58.tar.gz 
-cd stunnel-5.58
-./configure && make && make install
-place=whereis stunnel
-echo "$place"
+
