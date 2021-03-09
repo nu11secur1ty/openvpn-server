@@ -21,7 +21,7 @@ echo "accept = 443" |  tee -a /usr/local/etc/stunnel//stunnel.conf
 echo "connect = 127.0.0.1:1194" |  tee -a /usr/local/etc/stunnel/stunnel.conf
 echo "cert = /etc/stunnel/stunnel.pem" |  tee -a /usr/local/etc/stunnel/stunnel.conf
 
- sed -i -e 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+# sed -i -e 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
  cp /usr/local/etc/stunnel/stunnel.pem ~
 
