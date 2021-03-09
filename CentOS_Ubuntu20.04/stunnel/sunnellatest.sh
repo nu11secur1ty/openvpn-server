@@ -9,6 +9,7 @@ tar -xvf stunnel-5.58.tar.gz && cp -r stunnel-5.58 /etc/stunnel
 # apt install -y stunnel4
 cd /etc/stunnel/
 openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=127.0.0.1/O=localhost/C=BG' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
+./configure && make && make install
 touch stunnel.conf
 # echo "client = no" # if you don't have an account yet
 echo "client = yes" |  tee -a /etc/stunnel/stunnel.conf
