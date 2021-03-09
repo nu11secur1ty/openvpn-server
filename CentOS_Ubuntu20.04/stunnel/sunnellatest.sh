@@ -29,3 +29,5 @@ wget https://www.stunnel.org/downloads/stunnel-5.58.tar.gz
 tar -xvf stunnel-5.58.tar.gz 
 cd stunnel-5.58
 ./configure && make && make install
+place=whereis stunnel
+echo "$place"
