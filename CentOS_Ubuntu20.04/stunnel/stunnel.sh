@@ -6,7 +6,8 @@ apt install -y stunnel4
 cd /etc/stunnel/
 openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -sha256 -subj '/CN=127.0.0.1/O=localhost/C=BG' -keyout /etc/stunnel/stunnel.pem -out /etc/stunnel/stunnel.pem
 touch stunnel.conf
-# echo "client = yes" # if you use this script on the client machine
+
+# Server stunnel.conf setup
 echo "client = no" |  tee -a /etc/stunnel/stunnel.conf
 echo "[openvpn]" |  tee -a /etc/stunnel/stunnel.conf
 echo "accept = 443" |  tee -a /etc/stunnel/stunnel.conf
