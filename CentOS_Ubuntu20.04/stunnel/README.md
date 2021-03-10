@@ -52,7 +52,7 @@ sudo apt install stunnel4
 sudo cp ./stunnel.pem /etc/stunnel
 ```
 
-## Configuring stunnel on Linux
+## Configuring stunnel on Linux client
 
 Create `/etc/stunnel/stunnel.conf` file with the following content:
 
@@ -110,7 +110,7 @@ Replace `server_ip` with your server public IP address.
 
 [Download](https://www.stunnel.org/downloads.html) and install latest Windows stunnel client. Currently only 32-bit version is privoded and [this](https://www.stunnel.org/downloads/stunnel-5.44-win32-installer.exe) is the latest release by the time of writing this tutorial.
 
-## Configuring stunnel on Windows
+## Configuring stunnel on Windows client
 
 By default config file is located at `C:\Program Files (x86)\stunnel\config` as `stunnel.conf.txt`. Edit the file and add the following content at the bottom of the file:
 
