@@ -20,4 +20,4 @@ Near the end of the installation process, you will be presented with a window th
 
 After that, you’ll get another window just like the one in the next image. The System mail name should be the same as the name you assigned to the server when you were creating it. If it shows a subdomain like subdomain.example.com, change it to just example.com. When you’ve finished, press TAB, then ENTER.
 
-![]()
+![](https://github.com/nu11secur1ty/openvpn-server/blob/master/Monitoring/docs/2.png)
