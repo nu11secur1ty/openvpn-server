@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# @nu11secur1ty
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 # timestamp
