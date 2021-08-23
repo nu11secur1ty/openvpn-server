@@ -14,9 +14,9 @@ else
     if pgrep "openvpn" > /dev/null
     then
         echo "$ts: openvpn started OK..." >> /etc/openvpn/myscript/processcheck.log
-        echo "OpenVPN service went down, the service has been restarted." | mail -s "OpenVPN went down" email@domain.com
+        echo "OpenVPN service went down, the service has been restarted." | mail -s "OpenVPN went down" email@domain.com, second@gmail.com
     else
         echo "$ts: openvpn not started..." >> /etc/openvpn/myscript/processcheck.log
-        echo "OpenVPN service is down, the server is trying to restart the service." | mail -s "OpenVPN is down" email@domain.com
+        echo "OpenVPN service is down, the server is trying to restart the service." | mail -s "OpenVPN is down" email@domain.com, second@gmail.com
     fi
 fi
