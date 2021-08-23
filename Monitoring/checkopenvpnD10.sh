@@ -11,7 +11,7 @@ else
     echo "$ts: openvpn not running, restarting..." >> /root/openvpn-scripts/processcheck.log 
     systemctl start openvpn-server@server.service > /dev/null >> /root/openvpn-scripts/processcheck.log
 
-    if pgrep "openvpn" > /dev/null
+    if pgrep -f "openvpn-server@server.service" > /dev/null
     then
         echo "$ts: openvpn started OK..." >> /root/openvpn-scripts/processcheck.log
         echo "OpenVPN_Backup service went down, the service has been restarted." | mail -s "OpenVPN_Backup went down" yourmail@gmail.com
