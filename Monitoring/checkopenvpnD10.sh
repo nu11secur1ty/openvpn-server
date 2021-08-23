@@ -1,22 +1,15 @@
-#!/bin/bash
-# @nu11secur1ty
+#!/usr/bin/bash
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 # timestamp
 ts=`date +%m-%d-%Y_%H:%M:%S`
 
-if pgrep -f "pgrep openvpn-server@server.service" > /dev/null
+if systemctl status "openvpn-server@server.service" | grep "running" 
 then
-    echo "$ts: OpenVPN_Backup running..." >> /root/openvpn-scripts/processcheck.log
-else
-    echo "$ts: openvpn not running, restarting..." >> /root/openvpn-scripts/processcheck.log 
-    systemctl start openvpn-server@server.service > /dev/null >> /root/openvpn-scripts/processcheck.log
-
-    if pgrep -f "openvpn-server@server.service" > /dev/null
-    then
-        echo "$ts: openvpn started OK..." >> /root/openvpn-scripts/processcheck.log
-        echo "OpenVPN_Backup service went down, the service has been restarted." | mail -s "OpenVPN_Backup went down" yourmail@gmail.com
+	echo "$ts: OpenVPN running..." >> /root/openvpnscripts/processcheck.log
     else
-        echo "$ts: openvpn not started..." >> /root/openvpn-scripts/processcheck.log
-        echo "OpenVPN_Backup service is down, the server is trying to restart the service." | mail -s "OpenVPN_Backup is down"  yourmail@gmail.com
-    fi
+	echo "$ts: openvpn not running, restarting..." >> /root/openvpnscripts/processcheck.log 
+	systemctl start openvpn-server@server.service  > /dev/null >> /root/openvpnscripts/processcheck.log		
+	echo "$ts: openvpn not started..." >> /root/openvpnscripts/processcheck.log
+	echo "OpenVPN service is down, the server is trying to restart the service." | mail -s "OpenVPN is down" first@gmail.com, second@yahoo.com
 fi
